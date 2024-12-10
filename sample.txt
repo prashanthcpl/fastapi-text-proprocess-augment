@@ -1,0 +1,5 @@
+The quick brown fox jumps over the lazy dog.
+Hello world, how are you today?
+This is a sample text for processing.
+Natural language processing is fascinating. 
+
