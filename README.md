@@ -13,6 +13,7 @@ A FastAPI-based REST API for loading, viewing, and preprocessing text datasets. 
   - Format standardization
 - Line-by-line data access
 - Error handling for missing files and invalid requests
+- Text augmentation to introduce spelling errors
 
 ## Installation
 
@@ -45,11 +46,10 @@ uvicorn main:app --reload
 - `GET /`: Welcome message and available endpoints
 
 ### Dataset Operations
-- `POST /load`: Load the dataset from file
-- `GET /status`: Check if dataset is loaded
-- `GET /dataset`: View the complete dataset
-- `GET /dataset/normalize`: View normalized version of the dataset
-- `GET /dataset/{line_number}`: Get a specific line from the dataset
+- `POST /load`: Load the dataset from file sample.txt
+- `GET /view`: View the dataset
+- `GET /normalize`: View normalized version of the dataset
+- `GET /augment`: Augmented dataset
 
 ## Example Requests
 
@@ -105,20 +105,9 @@ Interactive API documentation is available at:
 - Swagger UI: `http://localhost:8000/docs`
 - ReDoc: `http://localhost:8000/redoc`
 
-## License
+## Run
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## Contact
-
-Your Name - your.email@example.com
-Project Link: [https://github.com/yourusername/fastapi-app](https://github.com/yourusername/fastapi-app)
-```
+- uvicorn main:app --reload
+- curl -X POST http://localhost:8000/load from the folder containing sample.txt to load the data
+- other endpoints: view
+- http://localhost:8000/
